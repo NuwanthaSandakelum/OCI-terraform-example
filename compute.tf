@@ -9,21 +9,21 @@ provider "oci" {
 
 resource "oci_core_vcn" "test_vcn" {
     cidr_block = "10.0.0.0/16"
-    compartment_id = "ocid1.compartment.oc1..aaaaaaaaw5rl3hdbal2ebqj5vcwhsxtjpwwnofzxlsrsq2hdn3j5xp455brq"
+    compartment_id = ""
 }
 
 resource "oci_core_subnet" "test_subnet" {
     #Required
     cidr_block = "10.0.0.0/24"
-    compartment_id = "ocid1.compartment.oc1..aaaaaaaaw5rl3hdbal2ebqj5vcwhsxtjpwwnofzxlsrsq2hdn3j5xp455brq"
+    compartment_id = ""
     vcn_id = oci_core_vcn.test_vcn.id
 }
 
 
 resource "oci_core_instance" "test_instance" {
     #Required
-    availability_domain = "iWiN:EU-FRANKFURT-1-AD-1"
-    compartment_id = "ocid1.compartment.oc1..aaaaaaaaw5rl3hdbal2ebqj5vcwhsxtjpwwnofzxlsrsq2hdn3j5xp455brq"
+    availability_domain = ""
+    compartment_id = ""
     shape = "VM.Standard.E2.1"
 
     source_details {
